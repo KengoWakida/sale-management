@@ -51,7 +51,7 @@ Things you may want to cover:
 | item_code           | integer       | null: false                     |
 | quantity            | integer       | null: false                     |
 
-# sale テーブル（販売）
+# sell テーブル（販売）
 | Column              | Type          | Options                        |
 | ------------------- | ------------- | ------------------------------ |
 | item_code           | integer       | null: false                    |
