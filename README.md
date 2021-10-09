@@ -22,3 +22,39 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+#テーブル設計
+
+## items テーブル（品目）
+| Column      | Type          | Options           |
+| ----------- | ------------- | ----------------- |
+| item        | string        | null: false       |
+
+## user テーブル（ユーザー）
+| Column              | Type          | Options             |
+| ------------------- | ------------- | ------------------- |
+| name                | string        | null: false         |
+| email               | string        | null: false, unique |
+| encrypted-password  | srting        | null: false         |
+
+# purchase テーブル（購入）
+| Column              | Type          | Options                         |
+| ------------------- | ------------- | ------------------------------- |
+| order_no            | integer       | null: false                     |
+| item_code           | integer       | null: false                     |
+| quantity            | integer       | null: false                     |
+| price               | integer       | null: false                     |
+| user                | references    | null: false, foreign_key: true  |
+
+# stock テーブル（在庫）
+| Column              | Type          | Options                         |
+| ------------------- | ------------- | ------------------------------- |
+| item_code           | integer       | null: false                     |
+| quantity            | integer       | null: false                     |
+
+# sell テーブル（販売）
+| Column              | Type          | Options                        |
+| ------------------- | ------------- | ------------------------------ |
+| item_code           | integer       | null: false                    |
+| price               | integer       | null: false                    |
+| quantity            | integer       | null: false                    |
+| user                | references    | null: false, foreign_key: true |
