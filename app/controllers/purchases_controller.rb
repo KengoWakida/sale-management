@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   def index
-
+    @purchases = Purchase.all
+   
   end
   
   def new
@@ -9,7 +10,7 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase =Purchase.create(purchase_params)
-    #binding.pry
+    
   end
 
   private
