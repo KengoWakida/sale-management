@@ -8,12 +8,13 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    Purchase.create(purchase_params)
+    @purchase =Purchase.create(purchase_params)
+    #binding.pry
   end
 
   private
   def purchase_params
-    params.permit(:order_no, :item, :quantity, :price).merge(user_id: current_user.id)
+    params.require(:purchase).permit(:order_no, :item, :quantity, :price).merge(user_id: current_user.id)
   end
 
 end
