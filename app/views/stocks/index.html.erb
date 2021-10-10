@@ -1,0 +1,11 @@
+<h2>在庫一覧画面</h2>
+<div>
+  <% @stocks.each do |stock| %>
+    <div>
+      品名<%= stock.item %>
+      数量<%= stock.quantity %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'トップ画面に戻る' ,  root_path, class: "item-red-btn" %>
