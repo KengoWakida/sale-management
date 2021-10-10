@@ -5,20 +5,25 @@ class PurchasesController < ApplicationController
   end
   
   def new
-    @purchase = Purchase.new
+    @purchase_stock = PurchaseStock.new
   end
 
   def create
-    @purchase =Purchase.create(purchase_params)
-    Stock.create(stock_params)
+    @purchase_stock = PurchaseStock.new(purchase_params)
+    #Stock.create(stock_params)
+    if @purchase_stock.valid?
+      @purchase_stock.save
+    else
+      render :new
+    end
   end
 
   private
   def purchase_params
-    params.require(:purchase).permit(:order_no, :item, :quantity, :price).merge(user_id: current_user.id)
+    params.require(:purchase_stock).permit(:order_no, :item, :quantity, :price).merge(user_id: current_user.id)
   end
 
-  def stock_params
-    params.require(:purchase).permit(:item,:quantity)
-  end
+  #ef stock_params
+  #  params.require(:purchase).permit(:item,:quantity)
+  #end
 end

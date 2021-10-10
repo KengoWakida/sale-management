@@ -15,4 +15,5 @@ class PurchaseStock
     purchase = Purchase.create(order_no: order_no, item: item, quantity: quantity, price: price,user_id: user_id)
     #在庫情報を保存する
     Stock.create(item: item, quantity: quantity)
+  end
 end
