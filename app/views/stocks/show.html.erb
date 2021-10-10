@@ -4,5 +4,5 @@
 数量<%= @stock.quantity %>
 </div>
 
-<%= link_to "販売" , new_stock_sell_path(@stock.id) %>
+<%= link_to "販売" , edit_stock_path(@stock.id) %>
 <%= link_to "削除", stock_path(@stock.id),method: :delete %>
