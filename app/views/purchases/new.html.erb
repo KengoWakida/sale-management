@@ -1,0 +1,8 @@
+<h2>購入画面</h2>
+<%= form_with(model: @purchase, local: true) do |form| %>
+      <%= form.text_field :order_no, placeholder: "注文番号" %>
+      <%= form.text_field :item, placeholder: "品名" %>
+      <%= form.text_field :quantity, placeholder: "数量" %>
+      <%= form.text_field :price, placeholder: "単価" %>
+      <%= form.submit "購入" %>
+    <% end %>

@@ -40,7 +40,7 @@ Things you may want to cover:
 | Column              | Type          | Options                         |
 | ------------------- | ------------- | ------------------------------- |
 | order_no            | integer       | null: false                     |
-| item_code           | integer       | null: false                     |
+| item                | string        | null: false                     |
 | quantity            | integer       | null: false                     |
 | price               | integer       | null: false                     |
 | user                | references    | null: false, foreign_key: true  |
@@ -48,13 +48,13 @@ Things you may want to cover:
 # stock テーブル（在庫）
 | Column              | Type          | Options                         |
 | ------------------- | ------------- | ------------------------------- |
-| item_code           | integer       | null: false                     |
+| item                | string        | null: false                     |
 | quantity            | integer       | null: false                     |
 
 # sell テーブル（販売）
 | Column              | Type          | Options                        |
 | ------------------- | ------------- | ------------------------------ |
-| item_code           | integer       | null: false                    |
+| item                | string        | null: false                    |
 | price               | integer       | null: false                    |
 | quantity            | integer       | null: false                    |
 | user                | references    | null: false, foreign_key: true |

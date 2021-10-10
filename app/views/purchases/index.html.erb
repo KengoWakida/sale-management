@@ -1,0 +1,12 @@
+<h2>購入履歴一覧画面</h2>
+<div>
+  <% @purchases.each do |purchase| %>
+    <span>注文番号<%= purchase.order_no %></span>
+    <span>品名<%= purchase.item %></span>
+    <span>数量<%= purchase.quantity %></span>
+    <span>価格<%= purchase.price %></span><br>
+  <% end %>
+</div>
+
+<%= link_to 'トップ画面に戻る' ,  root_path, class: "item-red-btn" %>
+<%= link_to '購入' ,  new_purchase_path, class: "item-red-btn" %>
