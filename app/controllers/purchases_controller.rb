@@ -10,7 +10,7 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase =Purchase.create(purchase_params)
-    
+    Stock.create(stock_params)
   end
 
   private
@@ -18,4 +18,7 @@ class PurchasesController < ApplicationController
     params.require(:purchase).permit(:order_no, :item, :quantity, :price).merge(user_id: current_user.id)
   end
 
+  def stock_params
+    params.require(:purchase).permit(:item,:quantity)
+  end
 end
