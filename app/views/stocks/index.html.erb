@@ -4,6 +4,7 @@
     <div>
       品名<%= stock.item %>
       数量<%= stock.quantity %>
+      <%= link_to "詳細", stock_path(stock.id) %>
     </div>
   <% end %>
 </div>
