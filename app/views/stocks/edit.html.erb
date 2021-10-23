@@ -4,5 +4,6 @@
   <%= form.text_field :item, placeholder: "品名" %>
   <%= form.text_field :quantity, placeholder: "数量" %>
   <%= form.text_field :price, placeholder: "単価" %>
-  <%= form.submit "販売" %>
+  <%= form.submit "販売", id:"sell-button" %>
+  <% form.submit "在庫", id:"stock-button" %>
 <% end %>
