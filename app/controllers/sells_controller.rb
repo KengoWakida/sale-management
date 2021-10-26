@@ -1,14 +1,24 @@
 class SellsController < ApplicationController
-  #def new 
-  #  @sell = Stock.find(params[:stock_id])
-  #end
+  def new 
+    @sell = Sell.new
+    @sell.item = session[:item]
+    @sell.quantity = session[:quantity]
+    @sell.price = session[:price]
+  end
 
-  #def create
-  #  @sell = Sell.create(sell_params)
-  #end
+   def create
+     @sell = Sell.create(sell_params)
+     binding.pry
+     if @sell.save 
+      
+      redirect_to root_path
+     else
+      render :new 
+     end
+   end
 
-  #private
-  #  def sell_params
-  #    params.require(:sell).permit(:item, :quantity, :price).merge(user_id: current_user.id)
-  #  end
+   private
+     def sell_params
+       params.require(:sell).permit(:item, :quantity, :price).merge(user_id: current_user.id)
+     end
 end

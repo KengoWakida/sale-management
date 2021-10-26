@@ -1,4 +1,4 @@
 class Stock < ApplicationRecord
-  has_one :sell
+  #has_one :sell
 
 end
