@@ -1,4 +1,8 @@
 class SellsController < ApplicationController
+  def index
+    @sells = Sell.all
+  end
+
   def new 
     @sell = Sell.new
     @sell.item = session[:item]
@@ -8,9 +12,7 @@ class SellsController < ApplicationController
 
    def create
      @sell = Sell.create(sell_params)
-     binding.pry
      if @sell.save 
-      
       redirect_to root_path
      else
       render :new 
