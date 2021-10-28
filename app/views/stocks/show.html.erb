@@ -1,0 +1,8 @@
+<h2>在庫詳細画面</h2>
+<div>
+品名<%= @stock.item %>
+数量<%= @stock.quantity %>
+</div>
+
+<%= link_to "販売" , edit_stock_path(@stock.id) %>
+<%= link_to "削除", stock_path(@stock.id),method: :delete %>

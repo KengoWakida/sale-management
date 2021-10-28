@@ -1,0 +1,8 @@
+<h2>販売画面</h2>
+
+<%= form_with(model: @sell, local: true) do |form|  %>
+  <%= form.text_field :item, id: "sell-item",value: @sell.item%>
+  <%= form.text_field :quantity, id: "sell-quantity",value: @sell.quantity %>
+  <%= form.text_field :price, id: "sell-price",value: @sell.price %>
+  <%= form.submit "販売", id:"sell-button" %>
+<% end %>

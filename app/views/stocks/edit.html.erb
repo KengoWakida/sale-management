@@ -1,0 +1,9 @@
+<h2>在庫数引き落とし画面</h2>
+
+<%= form_with(model: @stock,local: true) do |form| %>
+  <%= form.text_field :item, id: "stock-item",placeholder: "品名" %>
+  <%= form.text_field :quantity, id: "stock-quantity",placeholder: "数量" %>
+  <%= form.text_field :price, id: "stock-price",placeholder: "単価" %>
+  <%= form.submit "在庫引き落とし", id:"stock-button" %>
+<% end %>
+  

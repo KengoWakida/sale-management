@@ -1,0 +1,12 @@
+<h2>販売履歴一覧画面</h2>
+<div>
+  <% @sells.each do |sell| %>
+    <div>
+      品名<%= sell.item %>
+      数量<%= sell.quantity %>
+      金額<%= sell.price%>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'トップ画面に戻る' ,  root_path %>
