@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     it 'nameとemail、password、passwordconfirmationが存在すれば登録できる' do
-
+      expect(@user).to be_valid
     end
     it 'nameが空では登録できない' do
       @user.name = '' 
