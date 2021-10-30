@@ -1,22 +1,37 @@
 <h2>購入画面</h2>
 <%= form_with(model: @purchase_stock,url: purchases_path, local: true) do |form| %>
-  <div>
-      <%= form.label :order_no, "注文番号" %>    
-      <%= form.text_field :order_no, placeholder: "注文番号" %>
-  </div>
-  <div>
-      <%= form.label :order_no, "品名" %>    
-      <%= form.text_field :item, placeholder: "品名" %>
-  </div>
-  <div>
-      <%= form.label :order_no, "数量" %>    
-      <%= form.text_field :quantity, placeholder: "数量" %>
-  </div>
-  <div>
-      <%= form.label :order_no, "単価" %>    
-      <%= form.text_field :price, placeholder: "単価" %>
-  </div>
-  <div>
-      <%= form.submit "購入" %>
-  </div>
+    <table>
+    <div class = "purchase">
+        <tr>
+        <div class = "purchase_order">
+            <th><%= form.label :order_no, "注文番号" %></th>    
+            <td><%= form.text_field :order_no, placeholder: "注文番号" %></td>
+        </div>
+        </tr>
+        <tr>
+        <div class = "purchase_item">
+            <th><%= form.label :order_no, "品名" %></th>    
+            <td><%= form.text_field :item, placeholder: "品名" %></td>
+        </div>
+        </tr>
+        <tr>
+        <div class = "purchase_quantity">
+            <th><%= form.label :order_no, "数量" %></th>    
+            <td><%= form.text_field :quantity, placeholder: "数量" %></td>
+        </div>
+        </tr>
+        <tr>
+        <div class = "purchase_price">
+            <th><%= form.label :order_no, "単価" %></th>  
+            <td><%= form.text_field :price, placeholder: "単価" %></td>
+        </div>
+        </tr>
+        <tr>
+        <div class = "purchase_btn">
+            <th></th>
+            <td><%= form.submit "購入" %></td>
+        </div>
+        </tr>
+    </div>
+    </table>
 <% end %>
