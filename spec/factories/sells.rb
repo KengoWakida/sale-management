@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :sell do
-    item      {'部品'}
-    quantity  {20}
-    price     {100}
+    item          {'部品'}
+    quantity      {20}
+    price         {100}
+    association   :user
   end
 end
