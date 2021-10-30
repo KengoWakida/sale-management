@@ -17,8 +17,8 @@ RSpec.describe Purchase, type: :model do
         @purchase.valid?
         expect(@purchase.errors.full_messages).to include("Order no can't be blank")
       end
-      it '購入番号に英数字以外の文字が含まれる場合、購入処理が行えない' do
-        @purchase.order_no = '123つう'
+      it '購入番号に数字以外の文字が含まれる場合、購入処理が行えない' do
+        @purchase.order_no = 'あいうえお'
         @purchase.valid?
         expect(@purchase.errors.full_messages).to include ("Order no is not a number")
       end
