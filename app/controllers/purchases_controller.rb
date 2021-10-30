@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate_user!, except: :index
   def index
     @purchases = Purchase.all
-   
   end
   
   def new

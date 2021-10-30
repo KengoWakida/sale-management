@@ -1,14 +1,37 @@
 <h2>購入履歴一覧画面</h2>
-<div>
+<table border= "1">
+  <tr>
+    <th>注文番号</th>
+    <td>品名</td>
+    <td>数量（個）</td>
+    <td>単価(円)</td>
+    <td>金額(円)</td>
+    <td>担当者</td>
+    <td>購入日時</td>
+  </tr>
+  <% @sum = 0 %>
   <% @purchases.each do |purchase| %>
-    <div>
-      注文番号<%= purchase.order_no %>
-      品名<%= purchase.item %>
-      数量<%= purchase.quantity %>
-      価格<%= purchase.price %>
-    </div>
+    <tr>
+      <th><%= purchase.order_no %></th>
+      <td><%= purchase.item %></td>
+      <td><%= purchase.quantity %></td>
+      <td><%= purchase.price %></td>
+      <td><%= purchase.quantity * purchase.price %></td>
+      <% @sum += purchase.quantity * purchase.price %>
+      <td><%= purchase.user.name %></td>
+      <td><%= purchase.created_at %></td>
+    </tr>
   <% end %>
-</div>
+    <tr>
+      <th>合計金額</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><span class = "str"><%= @sum %></span></td>
+      <td></td>
+      <td></td>
+    </tr>
+</table>
 
 <%= link_to 'トップ画面に戻る' ,  root_path, class: "item-red-btn" %>
 <%= link_to '購入' ,  new_purchase_path, class: "item-red-btn" %>
