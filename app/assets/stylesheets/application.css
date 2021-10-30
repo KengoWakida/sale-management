@@ -18,3 +18,8 @@
   margin-right: auto;
   width: 95vw; 
 }
+
+.str{
+  font-weight   :bold;
+  color:        blue;
+}
