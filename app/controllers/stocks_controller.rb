@@ -10,16 +10,15 @@ class StocksController < ApplicationController
 
   def update
     @stock = Stock.find(params[:id])
-    session[:item] = @stock[:item]
-    session[:quantity] = @stock[:quantity]
-    session[:price] = @stock[:price]
+    # session[:item] = @stock[:item]
+    # session[:quantity] = @stock[:quantity]
+    # session[:price] = @stock[:price]
     @stock.update(stock_params)
     if @stock.valid?
-      
-      @stock.save
-      redirect_to new_sell_path
-    else
-      render :edit
+    #   @stock_sell.save
+       redirect_to new_sell_path
+     else
+       render :edit
     end
     #stock = Stock.find(params[:id])
     #stock.quantity =  (Stock.find(params[:id])[:quantity]).to_i - (params.require(:stock)[:quantity]).to_i
@@ -45,8 +44,6 @@ class StocksController < ApplicationController
     def stock_params
       params[:stock][:quantity] = (Stock.find(params[:id])[:quantity]).to_i - (params[:stock][:quantity]).to_i 
       params.require(:stock).permit(:item, :quantity)
-
-
     end
 
     #def sell_params

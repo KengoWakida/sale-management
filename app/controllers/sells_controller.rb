@@ -6,6 +6,7 @@ class SellsController < ApplicationController
 
   def new 
     @sell = Sell.new
+    @sell.sell_no = session[:sell_no]
     @sell.item = session[:item]
     @sell.quantity = session[:quantity]
     @sell.price = session[:price]
@@ -22,6 +23,6 @@ class SellsController < ApplicationController
 
    private
      def sell_params
-       params.require(:sell).permit(:item, :quantity, :price).merge(user_id: current_user.id)
+       params.require(:sell).permit(:sell_no,:item, :quantity, :price).merge(user_id: current_user.id)
      end
 end

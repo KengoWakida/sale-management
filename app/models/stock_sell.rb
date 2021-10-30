@@ -1,8 +1,9 @@
 class StockSell
   include ActiveModel::Model
-  attr_accessor :item, :quantity, :price, :user_id
+  attr_accessor :sell_no,:item, :quantity, :price, :user_id
 
   with_options presence: true do
+    validatas :sell_no,numericality: {only_integer: true}
     validates :item
     validates :quantity, numericality: {only_integer: true}
     validates :price,  numericality: {only_integer: true}
@@ -11,7 +12,7 @@ class StockSell
 
   def save
     stock = Stock.update(item: item, quantity: quantity)
-    Sell.create(item: item, price: price, quantity: quantity, user_id: current_user.id)
+    Sell.create(sell_no: sell_no,item: item, price: price, quantity: quantity, user_id: current_user.id)
   end
 end
 

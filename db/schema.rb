@@ -33,11 +33,9 @@ ActiveRecord::Schema.define(version: 2021_10_10_050558) do
     t.string "item", null: false
     t.integer "quantity", null: false
     t.integer "price", null: false
-    t.bigint "stock_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["stock_id"], name: "index_sells_on_stock_id"
     t.index ["user_id"], name: "index_sells_on_user_id"
   end
 
@@ -64,7 +62,6 @@ ActiveRecord::Schema.define(version: 2021_10_10_050558) do
   end
 
   add_foreign_key "purchases", "users"
-  add_foreign_key "sells", "stocks"
   add_foreign_key "sells", "users"
   add_foreign_key "stocks", "purchases"
 end
