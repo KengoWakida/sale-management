@@ -6,6 +6,8 @@
     <td>数量（個）</td>
     <td>単価(円)</td>
     <td>金額(円)</td>
+    <td>担当者</td>
+    <td>購入日時</td>
   </tr>
   <% @sum = 0 %>
   <% @purchases.each do |purchase| %>
@@ -16,6 +18,8 @@
       <td><%= purchase.price %></td>
       <td><%= purchase.quantity * purchase.price %></td>
       <% @sum += purchase.quantity * purchase.price %>
+      <td><%= purchase.user.name %></td>
+      <td><%= purchase.created_at %></td>
     </tr>
   <% end %>
     <tr>
@@ -24,6 +28,8 @@
       <td></td>
       <td></td>
       <td><span class = "str"><%= @sum %></span></td>
+      <td></td>
+      <td></td>
     </tr>
 </table>
 
