@@ -1,12 +1,17 @@
 <h2>販売履歴一覧画面</h2>
-<div>
+<table border= "1">
+  <tr>
+    <th>品名</th>
+    <td>数量(個)</td>
+    <td>金額(円)</td>
+  </tr>
   <% @sells.each do |sell| %>
-    <div>
-      品名<%= sell.item %>
-      数量<%= sell.quantity %>
-      金額<%= sell.price%>
-    </div>
-  <% end %>
-</div>
+    <tr>
+      <th><%= sell.item %></th>
+      <td><%= sell.quantity %></td>
+      <td><%= sell.price%></td>
+    </tr>
+  <% end%>
+</table>
 
 <%= link_to 'トップ画面に戻る' ,  root_path %>

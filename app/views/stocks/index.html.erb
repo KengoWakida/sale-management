@@ -1,12 +1,16 @@
 <h2>在庫一覧画面</h2>
-<div>
+<table border= "1">
+  <tr>
+    <th>品名</th>
+    <td>数量（個）</td>
+  </tr>
   <% @stocks.each do |stock| %>
-    <div>
-      品名<%= stock.item %>
-      数量<%= stock.quantity %>
-      <%= link_to "詳細", stock_path(stock.id) %>
-    </div>
-  <% end %>
-</div>
+    <tr>
+      <th><%= stock.item %></th>
+      <td><%= stock.quantity %></td>
+      <td><%= link_to "詳細", stock_path(stock.id) %></td>
+    </tr>
+  <% end%>
+</table>
 
 <%= link_to 'トップ画面に戻る' ,  root_path, class: "item-red-btn" %>
