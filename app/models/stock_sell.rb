@@ -11,7 +11,6 @@ class StockSell
 
   def save
     stock = Stock.update(item: item, quantity: quantity)
-    binding.pry
     Sell.create(item: item, price: price, quantity: quantity, user_id: current_user.id)
   end
 end

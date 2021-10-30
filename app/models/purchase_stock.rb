@@ -3,10 +3,10 @@ class PurchaseStock
   attr_accessor :order_no, :item,:quantity, :price, :user_id
 
   with_options presence: true do
-    validates :order_no,numericality:{only_integer: true}
+    validates :order_no, numericality: {only_integer: true}
     validates :item
-    validates :quantity,numericality:{only_integer: true}
-    validates :price,numericality:{only_integer: true}
+    validates :quantity, numericality: {only_integer: true, greater_than_or_equal_to: 1}
+    validates :price,    numericality: {only_integer: true, greater_than_or_equal_to: 1}
     validates :user_id
   end
 
