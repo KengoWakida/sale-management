@@ -4,16 +4,27 @@
     <th>注文番号</th>
     <td>品名</td>
     <td>数量（個）</td>
-    <td>価格(円)</td>
+    <td>単価(円)</td>
+    <td>金額(円)</td>
   </tr>
+  <% @sum = 0 %>
   <% @purchases.each do |purchase| %>
     <tr>
       <th><%= purchase.order_no %></th>
       <td><%= purchase.item %></td>
       <td><%= purchase.quantity %></td>
       <td><%= purchase.price %></td>
+      <td><%= purchase.quantity * purchase.price %></td>
+      <% @sum += purchase.quantity * purchase.price %>
     </tr>
   <% end %>
+    <tr>
+      <th>合計金額</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><span class = "str"><%= @sum %></span></td>
+    </tr>
 </table>
 
 <%= link_to 'トップ画面に戻る' ,  root_path, class: "item-red-btn" %>
