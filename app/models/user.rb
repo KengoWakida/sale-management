@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :purchases
   has_many :sells
-  has_many :stocks
 
   validates :name, presence: true
 end
