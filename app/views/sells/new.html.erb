@@ -1,7 +1,13 @@
+<%# ユーザーがサインインしているか判定する%>
+<%= render partial: 'shared/header', model:@user %>
 <h2>販売画面</h2>
 
 <%= form_with(model: @sell, local: true) do |form|  %>
   <table>
+    <tr>
+      <th>販売番号</th>
+      <td><%= form.text_field :sell_no, id: "sell-no",value: @sell.sell_no %></td>
+    </tr>
     <tr>
       <th>品名</th>
       <td><%= form.text_field :item, id: "sell-item",value: @sell.item %></td>

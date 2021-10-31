@@ -14,6 +14,6 @@ class PurchaseStock
     #購入情報を保存し、purchaseに代入する
     purchase = Purchase.create(order_no: order_no, item: item, quantity: quantity, price: price,user_id: user_id)
     #在庫情報を保存する
-    Stock.create(item: item, quantity: quantity)
+    Stock.create(item: item, quantity: quantity,purchase_id: purchase.id)
   end
 end

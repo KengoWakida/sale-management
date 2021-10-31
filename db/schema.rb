@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_10_10_050558) do
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "order_no", null: false
+    t.string "order_no", null: false
     t.string "item", null: false
     t.integer "quantity", null: false
     t.integer "price", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_050558) do
   end
 
   create_table "sells", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "sell_no", null: false
     t.string "item", null: false
     t.integer "quantity", null: false
     t.integer "price", null: false
@@ -41,8 +42,10 @@ ActiveRecord::Schema.define(version: 2021_10_10_050558) do
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item", null: false
     t.integer "quantity", null: false
+    t.bigint "purchase_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["purchase_id"], name: "index_stocks_on_purchase_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,4 +63,5 @@ ActiveRecord::Schema.define(version: 2021_10_10_050558) do
 
   add_foreign_key "purchases", "users"
   add_foreign_key "sells", "users"
+  add_foreign_key "stocks", "purchases"
 end
