@@ -1,3 +1,5 @@
+<%# ユーザーがサインインしているか判定する%>
+<%= render partial: 'shared/header', model:@user %>
 <h2>在庫数引き落とし画面</h2>
 
 <%= form_with(model: @stock,local: true) do |form| %>

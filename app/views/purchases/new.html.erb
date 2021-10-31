@@ -1,3 +1,5 @@
+<%# ユーザーがサインインしているか判定する%>
+<%= render partial: 'shared/header', model:@user %>
 <h2>購入画面</h2>
 <%= form_with(model: @purchase_stock , url: purchases_path, local: true) do |form| %>
     <%# エラー発生時にメッセージが表示される %>

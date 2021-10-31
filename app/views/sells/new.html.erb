@@ -1,3 +1,5 @@
+<%# ユーザーがサインインしているか判定する%>
+<%= render partial: 'shared/header', model:@user %>
 <h2>販売画面</h2>
 
 <%= form_with(model: @sell, local: true) do |form|  %>

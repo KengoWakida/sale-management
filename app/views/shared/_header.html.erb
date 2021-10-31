@@ -1,0 +1,9 @@
+<div class = "user_sign_in">
+  <% if user_signed_in? %>    <%# ユーザーがサインインしているか判定する%>
+    <%= link_to current_user.email ,  "#", class: "user-nickname" %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <% else %>
+      <%= link_to "新規登録" ,new_user_registration_path,class: "item-red-btn" %>
+      <%= link_to "ログイン" ,new_user_session_path, class: "item-red-btn" %>
+  <% end %>
+</div>
