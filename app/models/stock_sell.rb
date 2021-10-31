@@ -3,7 +3,7 @@ class StockSell
   attr_accessor :sell_no,:item, :quantity, :price, :user_id
 
   with_options presence: true do
-    validatas :sell_no,numericality: {only_integer: true}
+    validates :sell_no,numericality: {only_integer: true}
     validates :item
     validates :quantity, numericality: {only_integer: true}
     validates :price,  numericality: {only_integer: true}
