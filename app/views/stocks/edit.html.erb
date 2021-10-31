@@ -10,6 +10,9 @@
       <th>数量</th>
       <td><%= form.text_field :quantity, id: "stock-quantity",placeholder: "数量" %></td>
     </tr>
+    <th>引き落とし数</th>
+      <td><%= form.text_field :reduce, id: "stock-reduce",placeholder: "在庫引き落とし" %></td>
+    </tr>
     <tr>
       <th></th>
       <td><%= form.submit "在庫引き落とし", id:"stock-button" %></td>

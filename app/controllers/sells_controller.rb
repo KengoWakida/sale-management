@@ -6,10 +6,10 @@ class SellsController < ApplicationController
 
   def new 
     @sell = Sell.new
-    @sell.sell_no = session[:sell_no]
+    # @sell.sell_no = session[:sell_no]
     @sell.item = session[:item]
-    @sell.quantity = session[:quantity]
-    @sell.price = session[:price]
+    @sell.quantity = session[:reduce]
+    # @sell.price = session[:price]
   end
 
    def create
