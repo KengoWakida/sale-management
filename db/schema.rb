@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 2021_10_10_050558) do
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
+  create_table "sales", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sells", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "sell_no", null: false
     t.string "item", null: false
