@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :sells
 
   validates :name, presence: true
+  
 end
