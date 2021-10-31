@@ -3,16 +3,16 @@
 <h1>販売管理システム トップページ</h1>
 
 <div class="link">
-  <li>
-    <%= link_to '購入' ,  new_purchase_path, class: "item-red-btn" %>
-  </li>
-  <li>
-    <%= link_to '購入一覧' ,  purchases_path, class: "item-red-btn" %>
-  </li>
-  <li>
-    <%= link_to '在庫一覧', stocks_path ,class: "item-red-btn" %>
-  </li>
-   <li>
-    <%= link_to '販売一覧' ,sells_path ,class: "item-red-btn" %>
-  </li> 
+  <div class = "btn">
+      <%= link_to '購入' ,  new_purchase_path, class: "item-btn" %>
+  </div>
+  <div class = "btn">
+      <%= link_to '購入一覧' ,  purchases_path, class: "item-btn" %>
+  </div>
+  <div class = "btn">
+      <%= link_to '在庫一覧', stocks_path ,class: "item-btn" %>
+  </div>
+  <div class = "btn">
+      <%= link_to '販売一覧' ,sells_path ,class: "item-btn" %>
+  </div>
 </div>
