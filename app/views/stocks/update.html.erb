@@ -1,5 +1,7 @@
 <%# ユーザーがサインインしているか判定する%>
 <%= render partial: 'shared/header', model:@user %>
-<h2>販売完了しました。</h2>
+<div class = "title">
+  <h2>販売完了しました。</h2>
+</div>
 
 <%= link_to 'トップ画面に戻る' ,  root_path, class: "item-red-btn" %>
