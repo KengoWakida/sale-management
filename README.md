@@ -24,11 +24,6 @@ Things you may want to cover:
 * ...
 #テーブル設計
 
-## items テーブル（品目）
-| Column      | Type          | Options           |
-| ----------- | ------------- | ----------------- |
-| item        | string        | null: false       |
-
 ## user テーブル（ユーザー）
 | Column              | Type          | Options             |
 | ------------------- | ------------- | ------------------- |
@@ -54,6 +49,7 @@ Things you may want to cover:
 # sell テーブル（販売）
 | Column              | Type          | Options                        |
 | ------------------- | ------------- | ------------------------------ |
+| sell_no             | string        | null: false                    |
 | item                | string        | null: false                    |
 | price               | integer       | null: false                    |
 | quantity            | integer       | null: false                    |
